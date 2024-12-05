@@ -1,0 +1,133 @@
+\documentclass[12pt]{report}
+
+%---------Packages----------%
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage[normalem]{ulem}
+\usepackage{lmodern, csquotes, graphicx, lipsum, booktabs, amsmath, setspace, rotating}
+
+%---------TitleSec----------%
+
+\usepackage[explicit]{titlesec}
+\titleformat{\chapter}[display]{\bfseries\centering}{\Huge Chapter \thechapter:}{1em}{\Huge #1}
+
+%---------FancyHdr----------%
+
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhead{}
+%\fancyhead[L]{\nouppercase{\leftmark}}
+%\fancyhead[R]{Sound of the Underground}
+%\fancyfoot{}
+%\fancyfoot[L]{Jacob P. Cupps}
+%\fancyfoot[R]{\thepage}
+%\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+%---------BibLaTeX----------%
+
+\usepackage[notes, backend=biber]{biblatex-chicago}
+\bibliography{references.bib}
+
+%---------Epigraph----------%
+
+\usepackage{epigraph}
+\AtBeginDocument{\renewcommand {\epigraphflush}{center}}
+\setlength \epigraphwidth {0.6\linewidth}
+\setlength\epigraphrule{0pt}
+
+%---------Verse------------%
+
+\usepackage{verse}
+\renewcommand*{\theHpoemline}{\arabic{verse@envctr}.\arabic{poemline}}
+
+%---Hyperref, after Verse--%
+
+\usepackage[hidelinks]{hyperref}
+
+%----------DOCUMENT---------%
+
+\begin{document}
+\pagenumbering{roman}
+\thispagestyle{empty}
+\input{chapters/titlepage}
+\frenchspacing %\doublespacing
+
+%-------Front Matter--------%
+
+\setcounter{page}{2}
+  %----_TOC, Lists-----%
+    \tableofcontents
+    \listoffigures
+    \addcontentsline{toc}{chapter}{List of Figures}
+    \listoftables
+    \addcontentsline{toc}{chapter}{List of Tables}
+
+  %--Acknowledgements--%
+    \chapter*{Acknowledgements}
+    \addcontentsline{toc}{chapter}{Acknowledgements}
+
+
+
+
+
+\vspace{0.2cm}
+\hfill{Jacob P. Cupps} \\ 
+\noindent \textit{Washington University in St. Louis} \\
+\noindent \textit{May 2026} \\
+
+  %-----Abstract-----%
+    \chapter*{Abstract}
+    
+    \begin{center}
+        \Large Known Unknowns: \\
+        \large Aesthetics, Ideology, and Musical Practice in \\ 
+        \large Contemporary Underground Hip-Hop  \\
+        \normalsize by \\
+        Jacob P. Cupps \\
+        Doctor of Philosophy in Music Theory \\
+        
+        Washington University in St. Louis, 2026 \\
+    \end{center}
+    
+    \addcontentsline{toc}{chapter}{Abstract}
+
+    \normalsize
+
+
+
+%---------------------------%
+\chapter{Introduction: TBA}
+\pagenumbering{arabic}
+\input{chapters/chp-01}
+
+\chapter{Musical Rupture and the Critique of Form in Hip-Hop}
+\input{chapters/chp-02}
+
+\chapter{Sampling Aesthetics and Hip-Hop's Sonic Lineage}
+\input{chapters/chp-03}
+
+\chapter{Preserving Hip-Hop's Subcultural Status in Contemporary Fan Discourse}
+\input{chapters/chp-04}
+
+\chapter{Conclusion: TBA}
+\input{chapters/chp-05}
+
+%---------------------------%
+
+\singlespacing
+\printbibliography
+\addcontentsline{toc}{chapter}{Bibliography}
+\nocite{*}
+
+%---------------------------%
+\chapter*{Appendix}
+\addcontentsline{toc}{chapter}{Appendix}
+\input{chapters/app-01}
+
+
+\end{document}
